@@ -7,7 +7,8 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "puppeteer": "^1.3.0"
+    "puppeteer-core": "^1.3.0",
+    "express": ""
   },
   "engines": {
     "node": "8.x"
