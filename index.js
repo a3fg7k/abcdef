@@ -26,10 +26,10 @@ ls.on("close", code => {
     (async () => {
     
     
-    //   const browser = await puppeteer.launch({
-    //       args: ['--no-sandbox']
-    //     });
-    //   console.log('browser launched')
+      const browser = await puppeteer.launch({
+          args: ['--no-sandbox']
+        });
+      console.log('browser launched')
     //   const page = await browser.newPage();
     //   console.log('created page')
     //   await page.goto('https://now.gg/play/yostar-limited/2211/arknights');
