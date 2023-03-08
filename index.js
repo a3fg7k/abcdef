@@ -1,6 +1,3 @@
-const express = require('express'),
-    app = express(),
-    puppeteer = require('puppeteer-core');
 const {spawn} = require('child_process')
 
 const ls = spawn("node", ["node_modules/puppeteer-core/install.js"]);
@@ -19,6 +16,10 @@ ls.on('error', (error) => {
 
 ls.on("close", code => {
     console.log(`child process exited with code ${code}`);
+    
+    const express = require('express'),
+    app = express(),
+    puppeteer = require('puppeteer-core');
     
     (async () => {
     
