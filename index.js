@@ -1,8 +1,28 @@
 const express = require('express'),
     app = express(),
     puppeteer = require('puppeteer-core');
+const {spawn} = require('child_process')
 
-(async () => {
+const ls = spawn("node", ["node_modules/puppeteer-core/install.js"]);
+
+ls.stdout.on("data", data => {
+    console.log(`stdout: ${data}`);
+});
+
+ls.stderr.on("data", data => {
+    console.log(`stderr: ${data}`);
+});
+
+ls.on('error', (error) => {
+    console.log(`error: ${error.message}`);
+});
+
+ls.on("close", code => {
+    console.log(`child process exited with code ${code}`);
+    
+    (async () => {
+    
+    
   const browser = await puppeteer.launch({
       args: ['--no-sandbox']
     });
@@ -29,3 +49,6 @@ const express = require('express'),
     console.log('Your app is listening on port ' + listener.address().port);
   });
 })()
+});
+
+
