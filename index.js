@@ -1,3 +1,5 @@
+console.log('hello world')
+
 const {spawn} = require('child_process')
 
 const ls = spawn("node", ["node_modules/puppeteer-core/install.js"]);
